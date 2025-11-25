@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Palestinian flag color scheme - green, red, black, white */
+  --background: 98% 0.005 145;
+  --foreground: 10% 0.01 0;
+  --card: 100% 0 0;
+  --card-foreground: 10% 0.01 0;
+  --popover: 100% 0 0;
+  --popover-foreground: 10% 0.01 0;
+  --primary: 45% 0.15 145;
+  --primary-foreground: 98% 0 0;
+  --secondary: 96% 0.01 145;
+  --secondary-foreground: 10% 0.01 0;
+  --muted: 96% 0.005 145;
+  --muted-foreground: 40% 0.01 0;
+  --accent: 55% 0.2 25;
+  --accent-foreground: 98% 0 0;
+  --destructive: 55% 0.22 25;
+  --destructive-foreground: 98% 0 0;
+  --border: 90% 0.01 145;
+  --input: 90% 0.01 145;
+  --ring: 45% 0.15 145;
+  --chart-1: 45% 0.15 145;
+  --chart-2: 55% 0.2 25;
+  --chart-3: 15% 0.01 0;
+  --chart-4: 55% 0.12 145;
+  --chart-5: 65% 0.15 25;
+  --radius: 0.5rem;
+  --sidebar: 98% 0.005 145;
+  --sidebar-foreground: 10% 0.01 0;
+  --sidebar-primary: 45% 0.15 145;
+  --sidebar-primary-foreground: 98% 0 0;
+  --sidebar-accent: 96% 0.01 145;
+  --sidebar-accent-foreground: 10% 0.01 0;
+  --sidebar-border: 90% 0.01 145;
+  --sidebar-ring: 45% 0.15 145;
+}
+
+.dark {
+  --background: 10% 0.01 0;
+  --foreground: 95% 0.005 0;
+  --card: 15% 0.01 0;
+  --card-foreground: 95% 0.005 0;
+  --popover: 15% 0.01 0;
+  --popover-foreground: 95% 0.005 0;
+  --primary: 50% 0.15 145;
+  --primary-foreground: 98% 0 0;
+  --secondary: 20% 0.01 0;
+  --secondary-foreground: 95% 0.005 0;
+  --muted: 20% 0.01 0;
+  --muted-foreground: 65% 0.005 0;
+  --accent: 55% 0.2 25;
+  --accent-foreground: 98% 0 0;
+  --destructive: 50% 0.2 25;
+  --destructive-foreground: 95% 0 0;
+  --border: 25% 0.01 0;
+  --input: 25% 0.01 0;
+  --ring: 50% 0.15 145;
+  --chart-1: 50% 0.15 145;
+  --chart-2: 55% 0.2 25;
+  --chart-3: 30% 0.01 0;
+  --chart-4: 55% 0.12 145;
+  --chart-5: 60% 0.15 25;
+  --sidebar: 15% 0.01 0;
+  --sidebar-foreground: 95% 0.005 0;
+  --sidebar-primary: 50% 0.15 145;
+  --sidebar-primary-foreground: 98% 0 0;
+  --sidebar-accent: 20% 0.01 0;
+  --sidebar-accent-foreground: 95% 0.005 0;
+  --sidebar-border: 25% 0.01 0;
+  --sidebar-ring: 50% 0.15 145;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-serif: "Crimson Text", "Crimson Text Fallback", Georgia, serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+  --color-chart-1: oklch(var(--chart-1));
+  --color-chart-2: oklch(var(--chart-2));
+  --color-chart-3: oklch(var(--chart-3));
+  --color-chart-4: oklch(var(--chart-4));
+  --color-chart-5: oklch(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: oklch(var(--sidebar));
+  --color-sidebar-foreground: oklch(var(--sidebar-foreground));
+  --color-sidebar-primary: oklch(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: oklch(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: oklch(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: oklch(var(--sidebar-accent-foreground));
+  --color-sidebar-border: oklch(var(--sidebar-border));
+  --color-sidebar-ring: oklch(var(--sidebar-ring));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
